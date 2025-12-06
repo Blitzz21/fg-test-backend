@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '/../public/api.php';
+// Adjust REQUEST_URI so the router inside public/api.php receives the correct path
+$_SERVER['REQUEST_URI'] = '/' . ltrim($_GET['path'] ?? 'api', '/');
 
-$effectiveUri = '/'.ltrim($_GET['path'] ?? 'api', '/');
-$router->dispatch($_SERVER['REQUEST_METHOD'], $effectiveUri);
+require __DIR__ . '/../public/api.php';
