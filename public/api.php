@@ -19,6 +19,7 @@ $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
 $allowedOrigins = [
     'http://localhost:3000',
     'http://localhost:5173', // if you ever use Vite's default port
+    'https://fg-test-frontend.vercel.app/'
 ];
 
 if (in_array($origin, $allowedOrigins, true)) {
